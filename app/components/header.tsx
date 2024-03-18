@@ -7,8 +7,8 @@ export default function Header() {
 
   const menus: { link: string; label: ReactNode }[] = [
     {
-      link: '/about',
-      label: 'About',
+      link: '/cv',
+      label: 'CV',
     },
     {
       link: '/',

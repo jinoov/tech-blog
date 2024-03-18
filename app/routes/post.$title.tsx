@@ -2,7 +2,6 @@ import { LoaderFunctionArgs, json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'url';
 import { remark } from 'remark';
 import html from 'remark-html';
 import matter from 'gray-matter';
@@ -14,7 +13,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
 
   assert(typeof title !== 'undefined', 'title은 무조건 존재한다');
 
-  const { data: file, error } = await tryRun(fs.readFile(path.join(path.resolve(), 'app', 'contents', `${title}.md`)));
+  const { data: file, error } = await tryRun(fs.readFile(path.join(path.resolve(), 'contents', `${title}.md`)));
 
   if (error) {
     return new Response(null, {

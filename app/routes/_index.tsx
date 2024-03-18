@@ -1,7 +1,6 @@
-import { json, type LoaderFunctionArgs, type MetaFunction } from '@remix-run/node';
+import { json, type MetaFunction } from '@remix-run/node';
 import path from 'node:path';
 import fs from 'node:fs/promises';
-import { fileURLToPath } from 'url';
 import { Link, useLoaderData } from '@remix-run/react';
 import { Card, CardHeader, Divider } from '@nextui-org/react';
 import { Fragment } from 'react/jsx-runtime';
@@ -11,7 +10,7 @@ export const meta: MetaFunction = () => {
 };
 
 export async function loader() {
-  const titleList = await fs.readdir(path.join(path.resolve(), 'app', 'contents'));
+  const titleList = await fs.readdir(path.join(path.resolve(), 'contents'));
 
   return json({
     titleList: titleList.map((content) => content.replace(/\.md$/, '')),
