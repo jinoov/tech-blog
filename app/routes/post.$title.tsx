@@ -7,7 +7,7 @@ import html from 'remark-html';
 import matter from 'gray-matter';
 import { assert } from '~/utils/assert';
 import { tryRun } from '~/utils/tryRun';
-import 'github-markdown-css/github-markdown-light.css';
+import Markdown from '~/components/markdown';
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const title = params.title;
@@ -39,7 +39,7 @@ export default function PostDetailPage() {
 
   return (
     <div>
-      <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} className="markdown-body" />
+      <Markdown content={data.contentHtml} />
     </div>
   );
 }
