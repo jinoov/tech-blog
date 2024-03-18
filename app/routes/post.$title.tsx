@@ -7,13 +7,15 @@ import html from 'remark-html';
 import matter from 'gray-matter';
 import { assert } from '~/utils/assert';
 import { tryRun } from '~/utils/tryRun';
+import 'github-markdown-css/github-markdown-light.css';
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const title = params.title;
 
   assert(typeof title !== 'undefined', 'title은 무조건 존재한다');
 
-  const { data: file, error } = await tryRun(fs.readFile(path.join(path.resolve(), 'contents', `${title}.md`)));
+  const filePath = path.join(path.resolve(), 'contents', 'posts', `${title}.md`);
+  const { data: file, error } = await tryRun(fs.readFile(filePath));
 
   if (error) {
     return new Response(null, {
@@ -37,9 +39,7 @@ export default function PostDetailPage() {
 
   return (
     <div>
-      <h1>post</h1>
-      <h2>{data.title}</h2>
-      <div dangerouslySetInnerHTML={{ __html: data.contentHtml }}></div>
+      <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} className="markdown-body" />
     </div>
   );
 }

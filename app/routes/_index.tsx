@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => {
 };
 
 export async function loader() {
-  const titleList = await fs.readdir(path.join(path.resolve(), 'contents'));
+  const titleList = await fs.readdir(path.join(path.resolve(), 'contents', 'posts'));
 
   return json({
     titleList: titleList.map((content) => content.replace(/\.md$/, '')),
