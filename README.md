@@ -9,3 +9,4 @@
 - [ ] comments
 - [ ] SEO
 - [ ] google analytics
+- [ ] custom domain
