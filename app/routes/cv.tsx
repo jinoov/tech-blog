@@ -25,9 +25,9 @@ export default function AboutPage() {
   const data = useLoaderData<typeof loader>();
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-7">
       <div>
-        <h2 className="font-bold text-xl">최진호</h2>
+        <h2 className="font-bold text-2xl">최진호</h2>
         <p>SW Engineer</p>
       </div>
       <Markdown content={data.contentHtml} />

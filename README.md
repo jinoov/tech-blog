@@ -7,3 +7,5 @@
 - [ ] markdown styling
 - [ ] infinite scrolling
 - [ ] comments
+- [ ] SEO
+- [ ] google analytics
