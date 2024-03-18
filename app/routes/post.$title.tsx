@@ -14,8 +14,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
 
   assert(typeof title !== 'undefined', 'title은 무조건 존재한다');
 
-  const dirname = path.dirname(fileURLToPath(import.meta.url));
-  const { data: file, error } = await tryRun(fs.readFile(path.join(dirname, '..', 'contents', `${title}.md`)));
+  const { data: file, error } = await tryRun(fs.readFile(path.join(path.resolve(), 'app', 'contents', `${title}.md`)));
 
   if (error) {
     return new Response(null, {
