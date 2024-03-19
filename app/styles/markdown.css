@@ -9,12 +9,13 @@
     }
 
     & > blockquote {
-      @apply text-xl italic font-bold max-w-3xl mx-auto mb-16 text-gray-600 relative md:px-12;
-
+      @apply text-2xl italic font-bold max-w-3xl mx-auto mb-16 text-gray-600 relative;
+      /* @apply text-2xl italic font-bold max-w-3xl mx-auto mb-16 text-gray-600 relative md:px-12; */
+      /* 
       &::before {
         content: '';
         @apply absolute -left-4 h-full w-1.5 bg-gradient-to-b from-purple-600 via-purple-500 to-purple-600 rounded-sm md:left-0 md:w-2;
-      }
+      } */
     }
 
     & > pre {
