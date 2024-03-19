@@ -10,3 +10,5 @@
 - [ ] SEO
 - [ ] google analytics
 - [ ] custom domain
+- [ ] thumbnail image
+- [ ] hightlight.js flickering issue

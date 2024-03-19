@@ -21,19 +21,17 @@ export default function Index() {
   const data = useLoaderData<typeof loader>();
 
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.8' }}>
-      <div className="flex flex-col">
-        {data.titleList.map((content, i) => (
-          <Fragment key={i}>
-            {i > 0 && <Divider />}
-            <Link to={`/post/${content}`}>
-              <Card shadow="none" radius="none" isHoverable className="py-3">
-                <CardHeader className="font-medium">{content}</CardHeader>
-              </Card>
-            </Link>
-          </Fragment>
-        ))}
-      </div>
+    <div className="flex flex-col">
+      {data.titleList.map((content, i) => (
+        <Fragment key={i}>
+          {i > 0 && <Divider />}
+          <Link to={`/post/${content}`}>
+            <Card shadow="none" radius="none" isHoverable className="py-3">
+              <CardHeader className="font-bold">{content}</CardHeader>
+            </Card>
+          </Link>
+        </Fragment>
+      ))}
     </div>
   );
 }
