@@ -1,6 +1,6 @@
 import { NextUIProvider } from '@nextui-org/react';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
-import './tailwind.css';
+import './styles/tailwind.css';
 import { default as LayoutImpl } from './components/layout';
 import { LinksFunction } from '@remix-run/node';
 
